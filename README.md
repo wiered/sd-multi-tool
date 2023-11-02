@@ -1,2 +1,3 @@
-# sd-multi-tool
-Stable Diffusion WebUI multi tool
+# Stable Diffusion WebUI multi tool
+
+Soon to be released
