@@ -13,10 +13,13 @@ A half standalone feature-rich tool for a Stable Diffusion WebUI.
 
 ## Features
 
+<div align="center">
+
 |              | Current features:  |              |
 |--------------|--------------------|--------------|
 | [Run WebUI](#run-webui) | [Styles Editor](#styles-editor) | [SD Prompt Reader](#sd-prompt-reader) |
 
+<div align="left">
 
 ## Run WebUI
 
