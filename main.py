@@ -308,9 +308,10 @@ def run_mutitool():
 
 
 if __name__ == '__main__':
+    multi_tool = Thread(target=run_mutitool)
+    multi_tool.start()
+
     webui = Thread(target=run_webui)
 
     myappid = 'wiered.sdmultitool.sdmultitool.1' # arbitrary string
     ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
-
-    run_mutitool()
