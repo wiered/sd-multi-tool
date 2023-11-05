@@ -550,7 +550,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
      </font>
     </property>
     <property name="text">
-     <string>Start</string>
+     <string>Launch</string>
     </property>
    </widget>
    <widget class="QPushButton" name="set_recommended_button">

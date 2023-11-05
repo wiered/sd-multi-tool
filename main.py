@@ -14,7 +14,10 @@ from windows import (
     Ui_SDPromptReaderDownloader, StylesEditorDialog
     )
 from widgets import ImageScene
-from core import WebUICommandGenerator, Downloader
+from core import (
+    WebUICommandGenerator, 
+    Downloader
+    )
 
 SDMT_BAT_FILENAME = "sdmt_start.bat"
 
@@ -165,7 +168,9 @@ class SDMultiTool(QMainWindow):
 
         if "NVIDIA" in gpu_name:
             self.ui.xformers_chbox.setChecked(True)
-            if total_memory >= 8:
+            if total_memory >= 12:
+                pass
+            elif total_memory >= 8:
                 self.ui.vram_med_sdxl_chbox.setChecked(True)
             elif total_memory >= 6:
                 self.ui.vram_low_chbox.setChecked(True)
@@ -178,7 +183,6 @@ class SDMultiTool(QMainWindow):
         self.run_webui.max_threads = psutil.cpu_count()
         self.ui.cache_chbox.setChecked(True)
         self.ui.no_half_vae_chbox.setChecked(True)
-        self.ui.no_half_chbox.setChecked(True)
         self.ui.safetensors_chbox.setChecked(True)
         self.ui.dark_theme_chbox.setChecked(True)
         
@@ -307,6 +311,8 @@ def run_mutitool():
 
 
 if __name__ == '__main__':
+    os.environ["QTWEBENGINE_CHROMIUM_FLAGS"] = "--disable-gpu"
+
     multi_tool = Thread(target=run_mutitool)
     multi_tool.start()
 

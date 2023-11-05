@@ -387,7 +387,7 @@ class Ui_MainWindow(object):
         self.autolaunch_chbox.setText(QCoreApplication.translate("MainWindow", u"auto launch", None))
         self.listen_chbox.setText(QCoreApplication.translate("MainWindow", u"listen", None))
         self.result_label.setText(QCoreApplication.translate("MainWindow", u"Result", None))
-        self.start_button.setText(QCoreApplication.translate("MainWindow", u"Start", None))
+        self.start_button.setText(QCoreApplication.translate("MainWindow", u"Launch", None))
         self.set_recommended_button.setText(QCoreApplication.translate("MainWindow", u"Set recommended", None))
         self.styles_editor_button.setText(QCoreApplication.translate("MainWindow", u"Styles Editor", None))
         self.start_button_3.setText(QCoreApplication.translate("MainWindow", u"(WIP)", None))
