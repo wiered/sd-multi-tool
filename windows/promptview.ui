@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PromptView</class>
+ <widget class="QDialog" name="PromptView">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1231</width>
+    <height>530</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>SD Multi Tool by Wiered - Prompt Reader lite</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog {
+background-color: rgba(30, 30, 40, 1);
+}
+
+QGraphicsView {
+	background-color: rgba(50, 50, 70, 1);
+	border: 0px;
+	border-radius: 7px;
+}
+
+QLabel {
+	color: rgba(200, 200, 200, 1);
+}
+
+QPlainTextEdit, QListView, QListWidget {
+	background-color: rgba(50, 50, 70, 1);
+	color: rgba(200, 200, 200, 1);
+	border: 0px solid rgba(255, 255, 255, 0.3);
+	border-radius: 7px;
+}
+
+QPlainTextEdit {
+	padding: 10px;
+}
+
+QPlainTextEdit#style_name, QPlainTextEdit#search_bar {
+	padding: 0px 10px;
+	padding-top: 3px;
+}
+
+QPushButton {
+	background-color: #6464A0;
+	border: 0px solid rgba(255, 255, 255, 0.3);
+	border-radius: 7px;
+	color: white;
+}
+
+QPushButton:pressed  { 
+	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+</string>
+  </property>
+  <widget class="QGraphicsView" name="graphicsView">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>512</width>
+     <height>512</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="prompt">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>10</y>
+     <width>451</width>
+     <height>251</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>JetBrains Mono</family>
+    </font>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+   <property name="placeholderText">
+    <string>Prompt</string>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="negative_prompt">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>270</y>
+     <width>451</width>
+     <height>251</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>JetBrains Mono</family>
+    </font>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+   <property name="placeholderText">
+    <string>Negative Prompt</string>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="settings">
+   <property name="geometry">
+    <rect>
+     <x>990</x>
+     <y>10</y>
+     <width>231</width>
+     <height>511</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>JetBrains Mono</family>
+    </font>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+   <property name="placeholderText">
+    <string>Settings</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

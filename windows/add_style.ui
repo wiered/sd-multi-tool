@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>NewStyleDialog</class>
+ <widget class="QDialog" name="NewStyleDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>624</width>
+    <height>532</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>New Style</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog {
+background-color: rgba(30, 30, 40, 1);
+}
+
+QLabel {
+	color: rgba(200, 200, 200, 1);
+}
+
+QPlainTextEdit, QListView, QListWidget {
+	background-color: rgba(50, 50, 70, 1);
+	color: rgba(200, 200, 200, 1);
+	border: 0px solid rgba(255, 255, 255, 0.3);
+	border-radius: 7px;
+}
+
+QPlainTextEdit {
+	padding: 10px;
+}
+
+QPlainTextEdit#style_name {
+	padding: 0px 10px;
+}
+
+QPushButton {
+	background-color: #6464A0;
+	border: 0px solid rgba(255, 255, 255, 0.3);
+	border-radius: 7px;
+	color: white;
+}
+
+QPushButton:pressed  { 
+	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+</string>
+  </property>
+  <widget class="QPlainTextEdit" name="negative_prompt">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>270</y>
+     <width>601</width>
+     <height>211</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>JetBrains Mono</family>
+    </font>
+   </property>
+   <property name="placeholderText">
+    <string>Negative Prompt</string>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="prompt">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>40</y>
+     <width>601</width>
+     <height>221</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>JetBrains Mono</family>
+    </font>
+   </property>
+   <property name="placeholderText">
+    <string>Prompt</string>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="style_name">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>601</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>JetBrains Mono</family>
+    </font>
+   </property>
+   <property name="verticalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="horizontalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="placeholderText">
+    <string>Style name</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="save_button">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>490</y>
+     <width>601</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="../res.qrc">
+     <normaloff>:/icons/icons/save.svg</normaloff>:/icons/icons/save.svg</iconset>
+   </property>
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../res.qrc"/>
+ </resources>
+ <connections/>
+</ui>

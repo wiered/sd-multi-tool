@@ -1,0 +1,11 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>images/mt-logo.ico</file>
+    <file>icons/done.svg</file>
+    <file>icons/addbox.svg</file>
+    <file>icons/copy.svg</file>
+    <file>icons/delete.svg</file>
+    <file>icons/refresh.svg</file>
+    <file>icons/save.svg</file>
+  </qresource>
+</RCC>
