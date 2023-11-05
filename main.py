@@ -212,7 +212,7 @@ class SDMultiTool(QMainWindow):
 
         self.scene = ImageScene()
         self.scene.set_parent_window(self.propmpt_view)
-        self.scene.set_image("images/drag_and_drop.png")
+        self.scene.set_image(":/icons/images/drag_and_drop.png")
         self.propmpt_view.graphicsView.setScene(self.scene)   
 
         self.propmpt_view_window.show()

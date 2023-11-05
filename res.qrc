@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="icons">
+    <file>images/drag_and_drop.png</file>
     <file>images/mt-logo.ico</file>
     <file>icons/done.svg</file>
     <file>icons/addbox.svg</file>
