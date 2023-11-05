@@ -33,7 +33,7 @@ With this tool you can easily set up your bat file, add most common settings to 
 Bat file creating from Result's widget plain text, so you can add your own settings to it
     and it will add them to file.
 
-Programm autosaves all your settings, and will load it automatically.
+Program autosav all your settings, and will load it automatically.
 
 Also this is main window of program.
 
@@ -43,7 +43,7 @@ Can be used in standalone mode
 
 This tool created for these who love create and edit styles.
 
-For now it's very simple, but with next update, something very cool will happen.
+For now, it's very simple, but with next update, something very cool will happen.
 
 ## SD Prompt Reader
 
