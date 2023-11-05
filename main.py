@@ -194,7 +194,6 @@ class SDMultiTool(QMainWindow):
         with open(SDMT_BAT_FILENAME, 'w') as f:
             f.write(self.ui.command_editor.toPlainText())
         webui.start()
-        webui.join()
 
 
     def start_styles_editor(self):
