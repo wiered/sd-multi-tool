@@ -33,7 +33,7 @@ With this tool you can easily set up your bat file, add most common settings to 
 Bat file creating from Result's widget plain text, so you can add your own settings to it
     and it will add them to file.
 
-Program autosav all your settings, and will load it automatically.
+Program autosave all your settings, and will load it automatically.
 
 Also this is main window of program.
 
