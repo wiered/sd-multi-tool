@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>WebUI</class>
+ <widget class="QDialog" name="WebUI">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1920</width>
+    <height>1080</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>SD MultiTool - WebUI</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #0b0f19;
+background: #0b0f19;</string>
+  </property>
+  <widget class="QWebEngineView" name="webEngineView">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>1900</width>
+     <height>1068</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QAbstractScrollArea {
+	padding: 5px 6px 5px 0;
+	border-radius: 5px;
+}
+
+QScrollBar::vertical {
+    border: 0px solid rgba(50, 50, 70, 1);
+    background: rgba(30, 30, 40, 1);
+    width: 10px;
+	border-radius: 3px;
+}
+
+QScrollBar::handle:vertical {
+    background: #6464A0;
+    border-radius: 2px;
+    min-height: 0px;
+}
+
+QScrollBar::add-line:vertical {
+    border: 0px solid grey;
+    background: rgba(50, 50, 70, 1);
+    height: 0px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:vertical {
+    border: 0px solid grey;
+    background: rgba(50, 50, 70, 1);
+    height: 0px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+    border: 0px solid grey;
+    width: 0px;
+    height: 0px;
+    background: rgba(50, 50, 70, 1);
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none;
+}</string>
+   </property>
+   <property name="url">
+    <url>
+     <string>about:blank</string>
+    </url>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QWebEngineView</class>
+   <extends>QWidget</extends>
+   <header location="global">QtWebEngineWidgets/QWebEngineView</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

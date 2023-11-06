@@ -4,4 +4,4 @@ from .window_ui import Ui_MainWindow
 from .styles_editor_ui import Ui_StylesEditor
 from .styles_window import StylesEditorDialog
 from .sdpv_download_dialog_ui import Ui_SDPromptReaderDownloader
-
+from .webui_ui import Ui_WebUI
