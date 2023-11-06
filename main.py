@@ -11,13 +11,12 @@ from pynvml import *
 
 from windows import (
     Ui_MainWindow, Ui_PromptView, 
-    Ui_SDPromptReaderDownloader, StylesEditorDialog,
-    Ui_WebUI
+    Ui_SDPromptReaderDownloader, StylesEditorDialog
     )
 from widgets import ImageScene
 from core import (
     WebUICommandGenerator, 
-    Downloader, utility
+    Downloader
     )
 
 SDMT_BAT_FILENAME = "sdmt_start.bat"
@@ -30,8 +29,6 @@ class SDMultiTool(QMainWindow):
         self.run_webui = WebUICommandGenerator()
         self.icon = QtGui.QIcon()
         self.icon.addFile(':/icons/images/mt-logo.ico')
-
-        self.webui_thread = Thread(target=run_webui)
 
         self.setWindowIcon(self.icon)
 
@@ -200,42 +197,7 @@ class SDMultiTool(QMainWindow):
             f.close()
         with open(SDMT_BAT_FILENAME, 'w') as f:
             f.write(self.ui.command_editor.toPlainText())
-
-        self.processes = utility.fetch_python_processes()
-
-        self.webui_process = QtCore.QProcess()
-        self.webui_process.setArguments("--enable-console")
-        self.webui_process.startDetached(SDMT_BAT_FILENAME)
-
-        self.webui_window = QDialog()
-        self.webui = Ui_WebUI()
-        self.webui.setupUi(self.webui_window)
-
-        self.webui.webEngineView.load(QtCore.QUrl('http://127.0.0.1:7860/?__theme=dark'))
-        self.webui.webEngineView.loadFinished.connect(self.reload_page)
-        self.webui.webEngineView.setVisible(False)
-
-        self.webui_window.finished.connect(self.close_webui)
-        self.webui_window.setWindowIcon(self.icon)
-        self.webui_window.show()
-
-
-    def reload_page(self, is_loaded):
-        if is_loaded != True:
-            self.webui.webEngineView.load(QtCore.QUrl('http://127.0.0.1:7860/?__theme=dark'))
-        else:
-            processes = utility.fetch_python_processes()
-            self.processes = [process for process in self.processes + processes if process not in self.processes or process not in processes]
-            self.webui.webEngineView.setVisible(True)
-
-
-    def close_webui(self):
-        for proc in psutil.process_iter():
-            # check whether the process name matches
-            if proc in self.processes:
-                proc.kill()
-                
-        self.webui_process.kill()
+        webui.start()
 
 
     def start_styles_editor(self):
@@ -261,8 +223,8 @@ class SDMultiTool(QMainWindow):
 
     def start_prompt_reader(self):
         if os.path.exists("SD Prompt Reader.exe"):
-            self.prompt_reader = QtCore.QProcess()
-            self.prompt_reader.start("SD Prompt Reader.exe")
+            self.webui = QtCore.QProcess()
+            self.webui.start("SD Prompt Reader.exe")
         else:
             self.prompt_reader_downloader_window = QDialog()
             self.prompt_reader_downloader_window.setWindowIcon(self.icon)
@@ -338,7 +300,6 @@ def run_webui():
         print("Cant run webui in standalone mode")
         return
     os.system(f"call {SDMT_BAT_FILENAME}")
-    return
 
 
 def run_mutitool():
@@ -352,7 +313,10 @@ def run_mutitool():
 if __name__ == '__main__':
     os.environ["QTWEBENGINE_CHROMIUM_FLAGS"] = "--disable-gpu"
 
+    multi_tool = Thread(target=run_mutitool)
+    multi_tool.start()
+
+    webui = Thread(target=run_webui)
+
     myappid = 'wiered.sdmultitool.sdmultitool.1' # arbitrary string
     ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
-
-    run_mutitool()

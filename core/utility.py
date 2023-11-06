@@ -19,14 +19,3 @@ def remove_quotes(string):
 
 def add_quotes(string):
     return '"' + str(string) + '"'
-
-def fetch_python_processes():
-    import psutil
-
-    processes = []
-
-    for process in psutil.process_iter():
-        if 'python' in process.name():
-            processes.append(process)
-
-    return processes
