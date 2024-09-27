@@ -5,7 +5,7 @@
 
 [Русский](https://github.com/wiered/sd-multi-tool/blob/master/ru_README.md) | [English](https://github.com/wiered/sd-multi-tool/blob/master/README.md)
 
-A half standalone feature-rich tool for a Stable Diffusion WebUI.
+Qt based half standalone feature-rich tool for a Stable Diffusion WebUI.
 
 <img src="images/screenshoot.png" alt="screenshoot" width ="800"/>
 
